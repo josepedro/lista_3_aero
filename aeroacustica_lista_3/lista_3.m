@@ -15,6 +15,8 @@ delta_x = 0.003;
 magnitude_velocidade_x = velocidades_x(:,:,1).^2;
 magnitude_velocidade_y = velocidades_y(:,:,1).^2;
 rho_vi_vj = rho*(sqrt(sum(magnitude_velocidade_x + magnitude_velocidade_y)));
+figure;
+plot(rho_vi_vj);
 
 % Dividindo pelo raio
 tamanhos = size(rho_vi_vj);
@@ -25,10 +27,23 @@ for x_i = 1:tamanhos(1)
 		rho_vi_vj(x_i, x_j) = rho_vi_vj(x_i, x_j)/4*pi*distancia;
 	end
 end
+figure;
+plot(rho_vi_vj);
 
 % Calculando o laplaciano para depois integrar
-laplaciano_rho_vi_vj = 	del2(rho_vi_vj);
+rho_vi_vj_a(1:length(rho_vi_vj)) = 0;
+% derivando a primeira vez
+for n = 1:length(rho_vi_vj_a)-1
+	rho_vi_vj_a(n) = (rho_vi_vj(n+1)-rho_vi_vj(n))/delta_x;
+end
+% derivando a segunda vez
+for n = 1:length(rho_vi_vj_a)-2
+	rho_vi_vj_a(n) = (rho_vi_vj(n+1)-rho_vi_vj(n))/delta_x;
+end
+laplaciano_rho_vi_vj = rho_vi_vj_a(1:length(rho_vi_vj)-2);
 %surf(laplaciano_rho_vi_vj)
+figure;
+plot(laplaciano_rho_vi_vj);
 
 % Calculando a pressao final
 pressao = trapz(laplaciano_rho_vi_vj);
