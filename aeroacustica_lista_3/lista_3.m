@@ -5,49 +5,22 @@ close all;
 
 disp('Questão 1 ----------------------');
 velocidades = open('velocidades.mat');
-velocidades_x = velocidades.vel_x;
-velocidades_y = velocidades.vel_y;
-velocidades_z = velocidades.vel_z;
+velocidades_x = velocidades.vel_x(:,:,1);
+velocidades_y = velocidades.vel_y(:,:,1);
 rho = 1.2; % kg/m^3
-delta_x = 0.003;
+delta_x = 0.003; % m
+coordenadas_x = [15 15]; % m
 
-% Calculando o rho*vi*vj
-magnitude_velocidade_x = velocidades_x(:,:,1).^2;
-magnitude_velocidade_y = velocidades_y(:,:,1).^2;
-rho_vi_vj = rho*(sqrt(sum(magnitude_velocidade_x + magnitude_velocidade_y)));
 
-% Dividindo pelo raio
-tamanhos = size(rho_vi_vj);
-for x_i = 1:tamanhos(1)
-	for x_j = 1:tamanhos(2)
-		%distancia =  sqrt((x_i*0.003)^2 + (x_j*0.003)^2);
-		distancia =  sqrt((15)^2 + (15)^2);
-		rho_vi_vj(x_i, x_j) = rho_vi_vj(x_i, x_j)/4*pi*distancia;
-	end
-end
 
-% Calculando o laplaciano para depois integrar
-rho_vi_vj_a(1:length(rho_vi_vj)) = 0;
-% derivando a primeira vez
-for n = 1:length(rho_vi_vj_a)-1
-	rho_vi_vj_a(n) = (rho_vi_vj(n+1)-rho_vi_vj(n))/delta_x;
-end
-% derivando a segunda vez
-for n = 1:length(rho_vi_vj_a)-2
-	rho_vi_vj_a(n) = (rho_vi_vj(n+1)-rho_vi_vj(n))/delta_x;
-end
-laplaciano_rho_vi_vj = rho_vi_vj_a(1:length(rho_vi_vj)-2);
+pressao_acustica = calcular_pressao(rho, delta_x, velocidades_x, velocidades_y, coordenadas_x);
 
-% Calculando a pressao final
-pressao_acustica = trapz(laplaciano_rho_vi_vj);
 resposta = ['Valor de Pressão Acústica: ', num2str(pressao_acustica, '%10.5e'), ...
 ' 	N/m^2'];
 disp(resposta);
 
 disp('Questão 2 ----------------------');
 % Plotando mapa de superfície de velocidade absoluta
-velocidades_x = velocidades_x(:,:,1);
-velocidades_y = velocidades_y(:,:,1);
 velocidades_absolutas = sqrt(velocidades_x.^2 + velocidades_y.^2);
 [x,y] = meshgrid([0:99]*0.003);
 x = x(:, 1:95);
@@ -62,6 +35,19 @@ resposta = ['O valor da dimensao característica é 0.0630 metros ou 63 mm', ...
 disp(resposta);	
 
 disp('Questão 3 ----------------------');
+% Plotando grafico de pressao por velocidades atraves da equacao 1
+pressao_velocidades_1(1:10) = 0;
+pressao_velocidades_2(1:10) = 0;
+for divisao = 1:10
+	velocidade_divisao = 10^divisao;
+	pressao_velocidades_1(divisao) = calcular_pressao(rho, delta_x, velocidades_x/velocidade_divisao ...
+	, velocidades_y/velocidade_divisao, coordenadas_x);
+	pressao_velocidades_2(divisao) = 
+end
+figure;
+
+plot(pressao_velocidades_1);
+
 
 % Plotando mapa de superfície de velocidade absoluta
 %figure;
