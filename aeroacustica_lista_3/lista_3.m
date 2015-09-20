@@ -80,7 +80,16 @@ title('Grafico Pressao Sonora em Relacao a Velocidade Absoluta');
 ylabel('y');
 xlabel('x');
 zlabel('velocidade vorticial [rad/s]');
-%resposta = ['O valor da dimensao característica é 0.0630 metros ou 63 mm', ...
-%' pois a turbulencia possui um centro definido com esse diâmetro característico.'];
+legend('Equacao de Lighthill', 'Aproximacao da Oitava Potencia');
+% Pergunta: os resultados coincidem? Justifique a sua resposta de maneira crítica.
+% Os dois gráficos possuem comportamentos similares visto que a pressão sonora decai exponencialmente ao longo
+% da variação de velocidades. Esse fato ocorre pois nas duas equações se considera que o som é gerado a partir 
+% de somas compactas oriundas de fontes sonoras, independentes,
+% que possuem o volume definido por V0/l^3, dado que l é a dimensão característica de cada vórtice.
+% Dado esse contexto, na expansão em campo distante o termo de retardamento se aproxima de 0 pois é considerado
+% que a análise dos vórtices é feita na origem do sistema, desconsiderando assim o efeito do retardamento. Nesse caso
+% a integral da solução de Green em campo distante se delimita em pho0*v^2*l^3.
+resposta = ['O valor da dimensao característica é 0.0630 metros ou 63 mm', ...
+' pois a turbulencia possui um centro definido com esse diâmetro característico.'];
 %disp(resposta);
 
