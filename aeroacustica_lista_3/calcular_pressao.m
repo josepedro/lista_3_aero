@@ -2,7 +2,7 @@ function pressao_acustica = calcular_pressao(rho, delta_x, velocidades_x, ...
 	velocidades_y, posicao_ouvinte, matriz_cubica)
 
 	% Calculando o vi*vj
-	vi_vj = sqrt(sum(sum(velocidades_x.^2)) + sum(sum(velocidades_y.^2)));
+	vi_vj = (sum(sum(velocidades_x.^2)) + sum(sum(velocidades_y.^2)));
 	% Calculando o rho*vi*vj
 	rho_vi_vj = rho*vi_vj;
 

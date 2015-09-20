@@ -14,7 +14,7 @@ posicao_ouvinte = [15 15 15]; % m
 pressao_acustica = calcular_pressao(rho, delta_x, velocidades_x, velocidades_y, posicao_ouvinte, velocidades.vel_x);
 
 valor_referencia = 2*10^-5;
-nivel_pressao_sonora_dB = 20*log((pressao_acustica+valor_referencia)/valor_referencia);
+nivel_pressao_sonora_dB = 20*log10((pressao_acustica+valor_referencia)/valor_referencia);
 
 resposta_1 = ['Valor de Pressão Acústica: ', num2str(pressao_acustica, '%10.5e'), ...
 ' N/m^2'];
@@ -80,7 +80,7 @@ title('Grafico Pressao Sonora em Relacao a Velocidade Absoluta');
 ylabel('y');
 xlabel('x');
 zlabel('velocidade vorticial [rad/s]');
-resposta = ['O valor da dimensao característica é 0.0630 metros ou 63 mm', ...
-' pois a turbulencia possui um centro definido com esse diâmetro característico.'];
-disp(resposta);
+%resposta = ['O valor da dimensao característica é 0.0630 metros ou 63 mm', ...
+%' pois a turbulencia possui um centro definido com esse diâmetro característico.'];
+%disp(resposta);
 
