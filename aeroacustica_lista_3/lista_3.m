@@ -90,3 +90,48 @@ legend('Equacao de Lighthill', 'Aproximacao da Oitava Potencia');
 % que a análise dos vórtices é feita na origem do sistema, desconsiderando assim o efeito do retardamento. Nesse caso
 % a integral da solução de Green em campo distante se delimita em pho0*v^2*l^3.
 
+disp('Questão 2.1 ----------------------');
+
+%size(vorticidade)
+%size(velocidades_absolutas)
+% Calculando a potencia pegando a posicao (10, 10, 10) do vortice
+v_linha = [0 0 35];
+vorticidade = curl(velocidades.vel_x(:,:,1), velocidades.vel_y(:,:,1));
+vorticidade_media = mean(mean(mean(vorticidade)));
+matriz_vorticidade = velocidades.vel_x;
+matriz_vorticidade(:) = 1;
+vorticidade = matriz_vorticidade*vorticidade_media;
+tamanhos = size(vorticidade);
+matriz_produto_vetorial_x = vorticidade;
+matriz_produto_vetorial_y = vorticidade;
+matriz_produto_vetorial_z = vorticidade;
+matriz_produto_vetorial_x(:) = 0;
+matriz_produto_vetorial_y(:) = 0;
+matriz_produto_vetorial_z(:) = 0;
+matriz_w_v_vlinha = velocidades.vel_x(:,:,1);
+for x = 1:tamanhos(1)
+	for y = 1:tamanhos(2)
+		for z = 1:tamanhos(3)
+			termo_1 = [vorticidade(x,y,z) vorticidade(x,y,z) vorticidade(x,y,z)];
+			termo_2 = [velocidades.vel_x(x,y,z) velocidades.vel_y(x,y,z) velocidades.vel_z(x,y,z)];
+			produto_vetorial = cross(termo_1, termo_2);
+			matriz_produto_vetorial_x(x,y,z) = produto_vetorial(1);
+			matriz_produto_vetorial_y(x,y,z) = produto_vetorial(2);
+			matriz_produto_vetorial_z(x,y,z) = produto_vetorial(3);
+			matriz_w_v_vlinha(x,y,z) = sum(produto_vetorial.*v_linha);
+		end
+	end
+end
+
+% Integrando a matriz oriunda de w, v e v'
+integracao_x_matriz_w_v_vlinha = trapz(matriz_w_v_vlinha,1);
+integracao_xy_matriz_w_v_vlinha = trapz(integracao_x_matriz_w_v_vlinha,2);
+integral_matriz_w_v_vlinha = trapz(integracao_xy_matriz_w_v_vlinha,3);
+
+% Multiplicando por -rho
+potencia_instantanea = -rho*integral_matriz_w_v_vlinha
+
+
+
+%w = vorticidade()
+%cross()	
