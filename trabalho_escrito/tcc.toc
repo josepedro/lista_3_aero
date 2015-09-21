@@ -1,0 +1,9 @@
+\changetocdepth {4}
+\select@language {brazil}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Lista de Exerc\IeC {\'\i }cios 3}}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Quest\IeC {\~a}o 1 - Forne\IeC {\c c}a o valor calculado da press\IeC {\~a}o ac\IeC {\'u}stica.}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Quest\IeC {\~a}o 2 - }{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Quest\IeC {\~a}o 3 - }{5}{section.1.3}
+\vspace {\cftbeforechapterskip }
