@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=latex 2015.9.16)  21 SEP 2015 12:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=latex 2015.6.9)  21 SEP 2015 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1575,84 +1575,92 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 5.
-) [2]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 28.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+Overfull \hbox (77.37521pt too wide) in paragraph at lines 7--7
+ [][] [] []  
+ []
+
+
+Overfull \hbox (401.21777pt too wide) in paragraph at lines 8--8
+ [][] [] []  
+ []
+
+
+Overfull \hbox (82.11101pt too wide) in paragraph at lines 9--9
+ [][] [] []  
+ []
+
+
+Overfull \hbox (102.17421pt too wide) in paragraph at lines 10--10
+ [][] [] []  
+ []
+
+) [2]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 26.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 29.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 34.
+(Font)              <10> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 34.
+(Font)              <7> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 34.
+(Font)              <5> on input line 32.
  [3
 
 
-]
-Overfull \hbox (43.00507pt too wide) in paragraph at lines 80--81
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][] 
- []
+] [4]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 105.
 
 
-Overfull \hbox (67.00531pt too wide) in paragraph at lines 81--82
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
- 
- []
-
-[4]
-Overfull \hbox (43.00507pt too wide) in paragraph at lines 124--125
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][] 
- []
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 110.
 
 
-Overfull \hbox (67.00531pt too wide) in paragraph at lines 125--126
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
- 
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 110.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 110.
 
 [5]
-Overfull \hbox (151.00616pt too wide) in paragraph at lines 141--142
-[][][][][][][][][][][][][][][][][][][][][] 
+File: figuras/velocidade_absoluta.eps Graphic file (type eps)
+ <figuras/velocidade_absoluta.eps>
+Overfull \hbox (26.39114pt too wide) in paragraph at lines 138--139
+ [][] 
  []
 
-
-Overfull \hbox (97.00562pt too wide) in paragraph at lines 147--148
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
+File: figuras/vorticidade.eps Graphic file (type eps)
+<figuras/vorticidade.eps>
+Overfull \hbox (22.3762pt too wide) in paragraph at lines 144--145
+ [][] 
  []
 
+[6] [7]
+File: figuras/pressao_velocidade.eps Graphic file (type eps)
+ <figuras/pressao_velocidade.eps> [8]
 
-Overfull \hbox (97.00562pt too wide) in paragraph at lines 152--153
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (229.00696pt too wide) in paragraph at lines 157--158
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 226.
 
 
-Overfull \hbox (163.00629pt too wide) in paragraph at lines 160--161
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 226.
 
-)
+[9])
 No file tcc.ind.
 
 AED: lastpage setting LastPage
-[6]
+[10]
 \tf@toc=\write6
 \openout6 = `tcc.toc'.
 
@@ -1667,12 +1675,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 31.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 31.
  ) 
 Here is how much of TeX's memory you used:
- 25980 strings out of 493106
- 464675 string characters out of 6137098
- 604528 words of memory out of 5000000
- 28955 multiletter control sequences out of 15000+600000
- 66447 words of font info for 52 fonts, out of 8000000 for 9000
+ 26063 strings out of 493106
+ 466441 string characters out of 6137099
+ 600532 words of memory out of 5000000
+ 29028 multiletter control sequences out of 15000+600000
+ 70446 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,13n,74p,679b,1903s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on tcc.dvi (7 pages, 72092 bytes).
+Output written on tcc.dvi (11 pages, 92700 bytes).

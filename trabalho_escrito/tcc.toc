@@ -3,7 +3,9 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Lista de Exerc\IeC {\'\i }cios 3}}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Quest\IeC {\~a}o 1 - Forne\IeC {\c c}a o valor calculado da press\IeC {\~a}o ac\IeC {\'u}stica.}{3}{section.1.1}
-\contentsline {section}{\numberline {1.2}Quest\IeC {\~a}o 2 - }{5}{section.1.2}
-\contentsline {section}{\numberline {1.3}Quest\IeC {\~a}o 3 - }{5}{section.1.3}
+\contentsline {section}{\numberline {1.1}Quest\IeC {\~a}o 1.1 - Forne\IeC {\c c}a o valor calculado da press\IeC {\~a}o ac\IeC {\'u}stica.}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Quest\IeC {\~a}o 1.2 - Plote os mapas de superf\IeC {\'\i }cie e encontre a dimens\IeC {\~a}o caracter\IeC {\'\i }stica $l$.}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Quest\IeC {\~a}o 3 - A partir da Eq(1) e da Eq(2) plote gr\IeC {\'a}ficos e compare-os. Os resultados coincidem? Justifique a sua resposta de maneira cr\IeC {\'\i }tica.}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4}Quest\IeC {\~a}o 2.1 - Quais os procedimentos para calcular a pot\IeC {\^e}ncia sonora instant\IeC {\^a}nea?}{8}{section.1.4}
+\contentsline {section}{\numberline {1.5}Quest\IeC {\~a}o 2.2 - Determine a pot\IeC {\^e}ncia instant\IeC {\^a}nea considerando que $v'$ = [0, 0, 35] m/s.}{9}{section.1.5}
 \vspace {\cftbeforechapterskip }
