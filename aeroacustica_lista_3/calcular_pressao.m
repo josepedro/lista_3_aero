@@ -1,18 +1,18 @@
 function pressao_acustica = calcular_pressao(rho, delta_x, velocidades_x, ...
-	velocidades_y, posicao_ouvinte, matriz_cubica)
+	velocidades_y, posicao_ouvinte)
 
 	% Calculando o vi*vj
-	vi_vj = sqrt(sum(sum(velocidades_x.^2)) + sum(sum(velocidades_y.^2)));
+	vi_vj = (sum(sum(sum(velocidades_x.^2))) + sum(sum(sum(velocidades_y.^2))));
 	% Calculando o rho*vi*vj
 	rho_vi_vj = rho*vi_vj;
 
 	% Preenchendo a matriz pelo escalar rho_vi_vj
-	matriz_tensor_lighthill = matriz_cubica;
+	matriz_tensor_lighthill = velocidades_x;
 	matriz_tensor_lighthill(:) = 1;
 	matriz_tensor_lighthill = matriz_tensor_lighthill*rho_vi_vj;
 
 	% Calculando a distancia |x - y|
-	tamanhos = size(matriz_cubica);
+	tamanhos = size(velocidades_x);
 	for x = 1:tamanhos(1)
 		for y = 1:tamanhos(2)
 			for z = 1:tamanhos(3)

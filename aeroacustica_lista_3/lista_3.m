@@ -11,7 +11,8 @@ rho = 1.2; % kg/m^3
 delta_x = 0.003; % m
 posicao_ouvinte = [15 15 15]; % m
 
-pressao_acustica = calcular_pressao(rho, delta_x, velocidades_x, velocidades_y, posicao_ouvinte, velocidades.vel_x);
+pressao_acustica = calcular_pressao(rho, delta_x, velocidades.vel_x, velocidades.vel_y, ...
+posicao_ouvinte);
 
 valor_referencia = 2*10^-5;
 nivel_pressao_sonora_dB = 20*log((pressao_acustica+valor_referencia)/valor_referencia);
@@ -55,20 +56,20 @@ velocidade_inicial = ((pressao_acustica*(distancia)*c0^2)/(dimensao_caracteristi
 % Plotando grafico de pressao por velocidades atraves da equacao 1
 pressao_velocidades_1(1:10) = 0;
 pressao_velocidades_2(1:10) = 0;
-velocidades_media_x = velocidades_x;
-tamanhos = size(velocidades_x);
-velocidade_media_x = (sum(sum(sum(velocidades_x))))/tamanhos(1)*tamanhos(2);
+velocidades_media_x = velocidades.vel_x;
+tamanhos = size(velocidades.vel_x);
+velocidade_media_x = (sum(sum(sum(velocidades_x))))/tamanhos(1)*tamanhos(2)*tamanhos(3);
 velocidades_media_x(:) = 1;
 velocidades_media_x = velocidades_media_x*velocidade_media_x;
-velocidades_media_y = velocidades_y;
-tamanhos = size(velocidades_x);
-velocidade_media_y = (sum(sum(sum(velocidades_y))))/tamanhos(1)*tamanhos(2);
+velocidades_media_y = velocidades.vel_y;
+tamanhos = size(velocidades.vel_y);
+velocidade_media_y = (sum(sum(sum(velocidades_y))))/tamanhos(1)*tamanhos(2)*tamanhos(3);
 velocidades_media_y(:) = 1;
 velocidades_media_y = velocidades_media_y*velocidade_media_y;
 for divisao = 1:10
 	velocidade_divisao = 10^divisao;
 	pressao_velocidades_1(divisao) = calcular_pressao(rho, delta_x, velocidades_media_x/velocidade_divisao ...
-	, velocidades_media_y/velocidade_divisao, posicao_ouvinte, velocidades.vel_x);
+	, velocidades_media_y/velocidade_divisao, posicao_ouvinte);
 	velocidade = velocidade_inicial/velocidade_divisao;
 	pressao_velocidades_2(divisao) = (dimensao_caracteristica_l/distancia)*(rho*velocidade^4)/c0^2;
 end
@@ -77,9 +78,8 @@ loglog(pressao_velocidades_1);
 hold on;
 loglog(pressao_velocidades_2, 'r');
 title('Grafico Pressao Sonora em Relacao a Velocidade Absoluta');
-ylabel('y');
-xlabel('x');
-zlabel('velocidade vorticial [rad/s]');
+ylabel('pressao acustica');
+xlabel('velocidade');
 resposta = ['O valor da dimensao característica é 0.0630 metros ou 63 mm', ...
 ' pois a turbulencia possui um centro definido com esse diâmetro característico.'];
 disp(resposta);
